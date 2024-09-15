@@ -23,6 +23,10 @@ module.exports = {
         customOrange: "#FF8600",
         customBlue: "#10B6CB",
       },
+      fontFamily: {
+        moonhouse: ["var(--font-moonhouse)"],
+        lexend: ["var(--font-lexend)"],
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

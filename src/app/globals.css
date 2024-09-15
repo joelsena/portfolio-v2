@@ -27,3 +27,36 @@
     --radius: 0.5rem;
   }
 }
+
+@keyframes blink {
+  0%, 100% {
+      opacity: 1;
+  }
+  50% {
+      opacity: 0;
+  }
+}
+
+.blinking {
+  animation: blink 150ms infinite;
+}
+
+.text-border-stroke .text-border-stroke-hover {
+  color: #FF8600;
+}
+
+.text-border-stroke {
+  text-shadow: 
+  -1px -1px 0 #FF8600,
+    1px -1px 0 #FF8600,
+    -1px 1px 0 #FF8600,
+    1px 1px 0 #FF8600;
+}
+
+.text-border-stroke-hover:hover {
+  text-shadow: 
+  -1px -1px 0 #FF8600,
+    1px -1px 0 #FF8600,
+    -1px 1px 0 #FF8600,
+    1px 1px 0 #FF8600;
+}
