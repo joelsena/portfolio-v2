@@ -1,6 +1,5 @@
-import Link from "next/link";
-
 import { CustomButton } from "@/components/CustomButton";
+import { Card } from "@/components/Card";
 
 export default function Home() {
   return (
@@ -27,6 +26,18 @@ export default function Home() {
 
         <span className="bg-lightYellow w-[0.875rem] mx-1 flex-none" />
         <span className="bg-lightYellow w-[1.625rem] flex-none" />
+      </section>
+
+      {/* TODO: posts */}
+      <section className="mt-14">
+        <h5 className="text-xl font-bold mb-5">Últimos posts</h5>
+        <div className="grid grid-cols-3 gap-4">
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </div>
       </section>
     </main>
   );

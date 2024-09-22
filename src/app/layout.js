@@ -1,8 +1,8 @@
 import { Lexend } from "next/font/google";
 import localFont from "next/font/local";
-import Link from "next/link";
 
-import { Button } from "@/components/ui/button";
+import { TextWithBorder } from "@/components/TextWithBorder";
+import { CustomButton } from "@/components/CustomButton";
 import "./globals.css";
 
 const lexend = Lexend({ subsets: ["latin-ext"], weight: ["400", "500", "600"], variable: "--font-lexend" });
@@ -28,30 +28,22 @@ export default function RootLayout({ children }) {
           }}
         >
           <header className="flex items-center justify-between">
-            <h1
-              className="text-customOrange font-moonhouse"
+            <TextWithBorder
+              text="Joel Sena"
+              className="text-white"
               style={{
                 fontSize: "2rem",
               }}
-            >
-              Joel Sena
-            </h1>{" "}
-            <div className="flex">
-              {/* TODO: hover variation */}
-              <Button className="text-customBlue hover:underline text-xl font-bold" variant="none" asChild>
-                <Link href="#">CV</Link>
-              </Button>
-
-              <Button className="text-customBlue hover:underline text-xl font-bold" variant="none" asChild>
-                <Link href="#">Post</Link>
-              </Button>
-
-              <Button className="text-customBlue hover:underline text-xl font-bold" variant="none" asChild>
-                <Link href="#">Me Contate</Link>
-              </Button>
+            />
+            <div className="flex gap-4">
+              <CustomButton textColor="#10b6cb">CV</CustomButton>
+              <CustomButton textColor="#10b6cb">Post</CustomButton>
+              <CustomButton textColor="#10b6cb">Me Contate</CustomButton>
             </div>
           </header>
           {children}
+
+          {/* TODO: NAVEGAÇÃO POR CELULAR */}
         </div>
       </body>
     </html>
