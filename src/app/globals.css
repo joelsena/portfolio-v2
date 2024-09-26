@@ -37,6 +37,19 @@
   }
 }
 
+@keyframes stripeAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20%);
+  }
+}
+
+.animate-stripes {
+  animation: stripeAnimation 3s linear infinite;
+}
+
 .blinking {
   animation: blink 150ms infinite;
 }

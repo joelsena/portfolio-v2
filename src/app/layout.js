@@ -1,9 +1,9 @@
 import { Lexend } from "next/font/google";
 import localFont from "next/font/local";
 
-import { TextWithBorder } from "@/components/TextWithBorder";
-import { CustomButton } from "@/components/CustomButton";
 import "./globals.css";
+import { NavButton } from "@/components/NavButton";
+import { Phone } from "@/components/Phone";
 
 const lexend = Lexend({ subsets: ["latin-ext"], weight: ["400", "500", "600"], variable: "--font-lexend" });
 const moonHouse = localFont({
@@ -27,23 +27,9 @@ export default function RootLayout({ children }) {
             width: "min(895px, 100%)",
           }}
         >
-          <header className="flex items-center justify-between">
-            <TextWithBorder
-              text="Joel Sena"
-              className="text-white"
-              style={{
-                fontSize: "2rem",
-              }}
-            />
-            <div className="flex gap-4">
-              <CustomButton textColor="#10b6cb">CV</CustomButton>
-              <CustomButton textColor="#10b6cb">Post</CustomButton>
-              <CustomButton textColor="#10b6cb">Me Contate</CustomButton>
-            </div>
-          </header>
           {children}
 
-          {/* TODO: NAVEGAÇÃO POR CELULAR */}
+          <Phone />
         </div>
       </body>
     </html>
