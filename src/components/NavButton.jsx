@@ -1,6 +1,6 @@
 "use client";
 
-export function NavButton({ icon: Icon, children, onClick }) {
+export function NavButton({ icon: Icon, children, onClick, isActive }) {
   let count = 1;
   return (
     <button
@@ -9,7 +9,9 @@ export function NavButton({ icon: Icon, children, onClick }) {
         phoneSelect.volume = 0.2;
         phoneSelect.play();
       }}
-      className="flex items-center gap-2 text-xl font-lexend font-semibold hover:bg-[#394D9F] py-2 pl-6 rounded-tl-full rounded-bl-full"
+      className={`flex items-center gap-2 text-2xl font-xolonium font-semibold hover:bg-[#394D9F] py-2 pl-6 rounded-tl-full rounded-bl-full ${
+        isActive ? "bg-[#394D9F]" : ""
+      }`}
       style={{
         width: "90%",
       }}

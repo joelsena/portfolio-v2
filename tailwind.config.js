@@ -25,6 +25,7 @@ module.exports = {
       },
       fontFamily: {
         moonhouse: ["var(--font-moonhouse)"],
+        xolonium: ["var(--font-xolonium)"],
         lexend: ["var(--font-lexend)"],
       },
     },
