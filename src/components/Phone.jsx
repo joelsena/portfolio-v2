@@ -7,8 +7,12 @@ import { HiHome } from "react-icons/hi2";
 import { TbBook } from "react-icons/tb";
 import { FiFileText } from "react-icons/fi";
 import { LuPhone } from "react-icons/lu";
+import { MdOutlineSignalWifiOff } from "react-icons/md";
+import { MdOutlineNetworkCell } from "react-icons/md";
+import { MdBattery5Bar } from "react-icons/md";
 
 import { NavButton } from "./NavButton";
+import { TextWithBorder } from "./TextWithBorder";
 
 export function Phone() {
   const [show, setShow] = useState(false);
@@ -49,7 +53,7 @@ export function Phone() {
   // TODO: draggable
   return (
     <div
-      className="flex flex-col items-center justify-center fixed bottom-0 left-0 transition-all"
+      className="flex flex-col items-center justify-center left-56 fixed transition-all"
       style={{
         width: "398px",
         height: "618px",
@@ -80,7 +84,9 @@ export function Phone() {
           height: "45px",
         }}
       ></button>
+      {/* invisible button */}
 
+      {/* nav button section */}
       <div
         className="flex flex-col w-full h-full justify-center items-end py-8 text-white z-30"
         style={{
@@ -88,7 +94,16 @@ export function Phone() {
           height: "498px",
         }}
       >
-        <span className="block w-full bg-[#394D9F]">navi-menu</span>
+        <span className="flex justify-center items-center py-10 w-full bg-[#0D0D40] font-moonhouse">
+          <TextWithBorder
+            style={{
+              fontSize: "2rem",
+            }}
+            className="text-[#fff]"
+            borderColor="#6E80BD "
+            text="Joel Sena"
+          />
+        </span>
         <div className="flex flex-col w-full h-full justify-center items-end gap-px">
           {navItems.map(({ icon, title, href, ...rest }) => (
             <NavButton
@@ -96,7 +111,6 @@ export function Phone() {
               icon={icon}
               onClick={() => {
                 setNavItems((prev) => prev.map((item) => ({ ...item, isActive: item.title === title })));
-                console.log({ href });
                 push(href);
               }}
               {...rest}
@@ -106,25 +120,36 @@ export function Phone() {
           ))}
         </div>
       </div>
+      {/* nav button section */}
 
+      {/* phone model */}
       <img
         className="absolute top-0 bottom-0 left-0 right-0 z-20"
         src="/brc_phone_sliced.png"
         alt="celular bomb rush cyberfunk"
       />
+      {/* phone model */}
 
+      {/* phone header */}
       <header
-        className="flex justify-center items-center absolute w-full bg-[#394D9F] border-b-2 border-[#6E80BD] z-10 font-xolonium text-white font-bold text-2xl"
+        className="flex justify-center items-center absolute bg-[#394D9F] border-b-2 border-[#6E80BD] z-10 font-xolonium text-white font-bold text-2xl"
         style={{
           top: "60px",
           height: "32px",
+          width: "280px",
         }}
       >
-        {Intl.DateTimeFormat("pt-BR", {
-          hour: "2-digit",
-          minute: "2-digit",
-        }).format(new Date())}
+        <MdOutlineNetworkCell className="text-lg mr-2" />
+        <MdOutlineSignalWifiOff className="text-lg" />
+        <span className="mx-3">
+          {Intl.DateTimeFormat("pt-BR", {
+            hour: "2-digit",
+            minute: "2-digit",
+          }).format(new Date())}
+        </span>
+        <MdBattery5Bar className="transform rotate-90 text-lg" />
       </header>
+      {/* phone header */}
 
       <AnimatedStripes />
     </div>

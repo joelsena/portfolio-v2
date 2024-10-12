@@ -10,6 +10,7 @@ export function CustomButton({
   offset = 1,
   textColor = "#FF8600",
   textColorHover = "white",
+
   ...rest
 }) {
   const [showStroke, setShowStroke] = useState(false);
@@ -48,6 +49,7 @@ export function CustomButton({
           setShowStroke(false);
         }}
         href={href}
+        {...rest}
       >
         {showStroke && (
           <span

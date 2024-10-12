@@ -35,7 +35,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${moonHouse.variable} ${lexend.variable} ${xolonium.variable}`}>
-      <body className={"bg-darkYellow flex min-h-screen flex-col p-6 font-lexend"}>
+      <body className={"bg-darkYellow flex min-h-screen flex-col p-6 font-xolonium"}>
         <div
           className="mx-auto"
           style={{

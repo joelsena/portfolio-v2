@@ -1,7 +1,11 @@
 "use client";
 
+import { useState } from "react";
+
 export function NavButton({ icon: Icon, children, onClick, isActive }) {
-  let count = 1;
+  // TODO: easter egg contador
+  // const [count, setCount] = useState(1);
+
   return (
     <button
       onMouseEnter={() => {
@@ -16,19 +20,19 @@ export function NavButton({ icon: Icon, children, onClick, isActive }) {
         width: "90%",
       }}
       onClick={() => {
-        if (count === 10) {
-          const amostradinho = new Audio("/sfx/eu-gosto-e-assim-amostradinho.mp3");
-          amostradinho.volume = 0.5;
-          amostradinho.play();
-          count = 0;
-        }
+        // if (count === 10) {
+        //   const amostradinho = new Audio("/sfx/eu-gosto-e-assim-amostradinho.mp3");
+        //   amostradinho.volume = 0.5;
+        //   amostradinho.play();
+        //   setCount(0);
+        // }
 
         const phoneConfirm = new Audio("/sfx/flipphone_confirm.ogg");
         phoneConfirm.volume = 0.15;
         phoneConfirm.play();
 
+        // setCount((prev) => prev++);
         if (onClick) onClick();
-        count++;
       }}
     >
       <Icon />
