@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 import { HiHome } from "react-icons/hi2";
 import { TbBook } from "react-icons/tb";
@@ -11,8 +12,8 @@ import { MdOutlineSignalWifiOff } from "react-icons/md";
 import { MdOutlineNetworkCell } from "react-icons/md";
 import { MdBattery5Bar } from "react-icons/md";
 
+import MenuTabSVG from "../../public/menu-tab.svg";
 import { NavButton } from "./NavButton";
-import { TextWithBorder } from "./TextWithBorder";
 
 export function Phone() {
   const [show, setShow] = useState(false);
@@ -57,7 +58,7 @@ export function Phone() {
       style={{
         width: "398px",
         height: "618px",
-        bottom: show ? "0px" : "-43%",
+        bottom: show ? "0px" : "-46%",
       }}
     >
       {/* invisible button */}
@@ -94,15 +95,15 @@ export function Phone() {
           height: "498px",
         }}
       >
-        <span className="flex justify-center items-center py-10 w-full bg-[#0D0D40] font-moonhouse">
-          <TextWithBorder
-            style={{
-              fontSize: "2rem",
-            }}
-            className="text-[#fff]"
-            borderColor="#6E80BD "
-            text="Joel Sena"
-          />
+        <span className="flex flex-col justify-between items-center pt-6 pb-8 w-full text-white bg-[#09092b] font-moonhouse relative">
+          <img style={{ width: "260px" }} src="/diamond-logo.png" alt="" />
+
+          <div className="flex flex-col absolute -bottom-6" style={{ zIndex: "2" }}>
+            <Image width={280} src={MenuTabSVG} alt="" />
+          </div>
+          <div className="absolute top-full rounded-tl-lg w-full p-1 pr-8 bg-[#394D9F] text-end text-2xl font-bold font-xolonium">
+            navi-menu
+          </div>
         </span>
         <div className="flex flex-col w-full h-full justify-center items-end gap-px">
           {navItems.map(({ icon, title, href, ...rest }) => (
@@ -123,8 +124,10 @@ export function Phone() {
       {/* nav button section */}
 
       {/* phone model */}
-      <img
+      <Image
         className="absolute top-0 bottom-0 left-0 right-0 z-20"
+        width={398}
+        height={618}
         src="/brc_phone_sliced.png"
         alt="celular bomb rush cyberfunk"
       />
